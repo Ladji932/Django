@@ -5,9 +5,6 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.db.models import Q
 from django.utils import timezone
-from django.http import JsonResponse
-from django.utils.translation import gettext as _
-from django.template.loader import render_to_string
 
 from .models import Article
 
@@ -163,22 +160,4 @@ def chat_api(request):
 
     return JsonResponse({'error': 'Requête invalide'}, status=400)
 
-def translate(request):
-    lang = request.GET.get('lang', 'en')
-    translation.activate(lang)
-
-    results_title = _("Résultats de recherche")
-    summary_suggestions = _("Résumé et suggestions")
-    
-    error = None
-    results_html = render_to_string('main/results_fragment.html', {'results': results})  # Assurez-vous que ce template existe
-
-    response_data = {
-        'results_title': results_title,
-        'summary_suggestions': summary_suggestions,
-        'error': error,
-        'results_html': results_html,
-    }
-    
-    return JsonResponse(response_data)
 
