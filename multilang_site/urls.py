@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     # Route pour l'interface d'administration de Django.
@@ -23,3 +24,5 @@ urlpatterns = [
     # j'inclus les url de mon appli main
     path('', include('main.url')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
