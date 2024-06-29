@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% load i18n %}
     <title>Résultats de recherche</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,11 +47,7 @@
     </style>
 </head>
 <body>
-    {% load i18n %}
-    <ul class="mb-4">
-        <li><a href="?lang=en">{% trans "English" %}</a></li> <!-- Ligne 17 -->
-        <li><a href="?lang=fr">{% trans "Français" %}</a></li> <!-- Ligne 18 -->
-    </ul>
+    {% include 'main/header.html' %}
     <div class="container">
         <div class="content">
             <h1>{% trans "Résultats de recherche" %}</h1>

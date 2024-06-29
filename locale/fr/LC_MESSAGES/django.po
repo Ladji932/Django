@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-29 03:28+0200\n"
+"POT-Creation-Date: 2024-06-29 14:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,43 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: main/models.py:5
+#: main/models.py:7
 msgid "Title"
 msgstr "Titre"
 
-#: main/models.py:6
+#: main/models.py:10
 msgid "Content"
 msgstr "Contenu"
 
-#: main/models.py:7
+#: main/models.py:13
 msgid "Publication Date"
 msgstr "Date de publication"
 
-#: main/models.py:9
+#: main/models.py:19
 msgid "Image"
 msgstr ""
 
-#: main/templates/main/article_detail.html:6
-#: main/templates/main/article_detail.html:40
+#: main/templates/main/article_detail.html:7
+#: main/templates/main/article_detail.html:43
 msgid "Article Detail"
 msgstr "Détail de l'article"
 
-#: main/templates/main/article_detail.html:44
-#: main/templates/main/article_list.html:52
+#: main/templates/main/article_detail.html:50
+#: main/templates/main/article_list.html:54
+#: main/templates/main/rag_search.html:10 main/templates/main/results.html:50
 msgid "English"
 msgstr "Anglais"
 
-#: main/templates/main/article_detail.html:45
-#: main/templates/main/article_list.html:53
+#: main/templates/main/article_detail.html:53
+#: main/templates/main/article_list.html:57
+#: main/templates/main/rag_search.html:11 main/templates/main/results.html:51
 msgid "Français"
-msgstr "Français"
+msgstr ""
 
-#: main/templates/main/article_detail.html:54
+#: main/templates/main/article_detail.html:64
 msgid "Published on"
 msgstr "Publié le"
 
-#: main/templates/main/article_list.html:6
-#: main/templates/main/article_list.html:40
+#: main/templates/main/article_list.html:7
+#: main/templates/main/article_list.html:65
 msgid "List of Articles"
 msgstr "Liste des articles"
 
@@ -66,21 +68,44 @@ msgstr "Rechercher des articles"
 msgid "Search"
 msgstr "recherche"
 
-#: main/templates/main/rag_search.html:6 main/templates/main/rag_search.html:9
-msgid "Augmented Search"
-msgstr "Recherche Augmentée"
 
-#: main/templates/main/rag_search.html:11
+#: main/templates/main/header.html:8
+msgid "Home"
+msgstr "Accueil"
+
+#: main/templates/main/header.html:11
+msgid "Talk with our chatbot"
+msgstr "Parler avec notre chatbox"
+
+#: main/templates/main/rag_search.html:6 main/templates/main/rag_search.html:13
+msgid "Recherche Augmentée"
+msgstr "Augmented Search"
+
+#: main/templates/main/rag_search.html:15
 msgid "Entrez votre requête :"
-msgstr ""
+msgstr "Enter your query:"
 
-#: main/templates/main/rag_search.html:13
+#: main/templates/main/rag_search.html:17
 msgid "Rechercher"
-msgstr ""
+msgstr "Search"
 
-#: main/templates/main/rag_search.html:16
+#: main/templates/main/rag_search.html:20
 msgid "Résultats de la recherche :"
 msgstr ""
+
+#: main/templates/main/results.html:55
+msgid "Résultats de recherche"
+msgstr ""
+
+#: main/templates/main/results.html:72
+msgid "Résumé et suggestions"
+msgstr ""
+
+#~ msgid "French"
+#~ msgstr "Français"
+
+#~ msgid "Augmented Search"
+#~ msgstr "Recherche Augmentée"
 
 #~ msgid "{{ article.title }}"
 #~ msgstr "Francais"

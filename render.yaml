@@ -1,0 +1,7 @@
+services:
+  - name: web
+    buildCommand: python3 -m pip install -r requirements.txt
+    startCommand: python3 manage.py runserver 0.0.0.0:$PORT
+    env:
+      - key: DJANGO_SETTINGS_MODULE
+        value: "multilang_site.settings"

@@ -2,10 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+     <!-- Intégration de l'internalisation -->
     {% load i18n %}
-    <title>{% trans "Article Detail" %}</title> <!-- Ligne 7 -->
+    <title>{% trans "Article Detail" %}</title> 
     <!-- Intégration de Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Styles personnalisés -->
     <style>
         body {
@@ -36,14 +39,23 @@
     </style>
 </head>
 <body>
+    {% include 'main/header.html' %}
     <div class="container">
-        <h1 class="mb-4">{% trans "Article Detail" %}</h1> <!-- Ligne 7 -->
+        <!-- cette chaîne doit être traduite en fonction de la langue active actuelle de l'utilisateur. -->
+        <h1 class="mb-4">{% trans "Article Detail" %}</h1> 
 
         <!-- Liens pour changer de langue -->
-        <ul class="mb-4">
-            <li><a href="?lang=en">{% trans "English" %}</a></li> <!-- Ligne 17 -->
-            <li><a href="?lang=fr">{% trans "Français" %}</a></li> <!-- Ligne 18 -->
-        </ul>
+        <!-- Liens pour changer de langue -->
+        <div class="container">
+            <ul class="nav nav-pills mb-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="?lang=en">{% trans "English" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?lang=fr">{% trans "Français" %}</a>
+                </li>
+            </ul>
+        </div>
 
         <!-- Détails de l'article -->
         <div class="article-card">
@@ -51,12 +63,12 @@
             {% if article.image %}
                 <img src="{{ article.image.url }}" alt="{{ article.title }}" class="article-image">
             {% endif %}
-            <p class="article-date">{% trans "Published on" %} {{ article.publication_date }}</p> <!-- Ligne 26 -->
+            <p class="article-date">{% trans "Published on" %} {{ article.publication_date }}</p> 
             <p>{{ article.content }}</p>
         </div>
     </div>
 
-    <!-- Intégration de Bootstrap JS (optionnel) -->
+    <!-- Intégration de Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
