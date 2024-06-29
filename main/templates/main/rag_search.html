@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{% get_current_language %}">
+<head>
+    <meta charset="UTF-8">
+    {% load i18n %}
+    <title>{% trans "Recherche Augmentée" %}</title>
+</head>
+<body>
+    <ul class="mb-4">
+        <li><a href="?lang=en">{% trans "English" %}</a></li> <!-- Ligne 17 -->
+        <li><a href="?lang=fr">{% trans "Français" %}</a></li> <!-- Ligne 18 -->
+    </ul>
+    <h1>{% trans "Recherche Augmentée" %}</h1>
+    <form method="get">
+        <label for="query">{% trans "Entrez votre requête :" %}</label><br>
+        <input type="text" id="query" name="query"><br>
+        <input type="submit" value="{% trans "Rechercher" %}">
+    </form>
+    {% if results %}
+        <h2>{% trans "Résultats de la recherche :" %}</h2>
+        <ul>
+            {% for result in results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

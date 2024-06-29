@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    {% load i18n %}
+    <title>{% trans "List of Articles" %}</title>
+    <!-- Intégration de Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Styles personnalisés -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .article-card {
+            background-color: #ffffff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .article-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .article-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .article-date {
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">{% trans "List of Articles" %}</h1>
+
+        <!-- Formulaire de recherche -->
+        <form method="get" action="{% url 'search_articles' %}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="{% trans 'Search articles...' %}">
+                <button type="submit" class="btn btn-primary">{% trans 'Search' %}</button>
+            </div>
+        </form>
+
+        <!-- Liens pour changer de langue -->
+        <ul class="mb-4">
+            <li><a href="?lang=en">{% trans "English" %}</a></li>
+            <li><a href="?lang=fr">{% trans "Français" %}</a></li>
+        </ul>
+
+        <!-- Liste des articles -->
+        <div class="row">
+            {% for article in articles %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="article-card">
+                        <h3 class="article-title">{{ article.title }}</h3>
+                        <a href="{% url 'article_detail' article.pk %}">
+                            {% if article.image %}
+                                <img src="{{ article.image.url }}" alt="{{ article.title }}" class="article-image">
+                            {% endif %}
+                        </a>
+                        <p class="article-date">{{ article.publication_date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!-- Intégration de Bootstrap JS (optionnel) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
